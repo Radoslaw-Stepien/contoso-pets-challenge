@@ -291,7 +291,7 @@ do
             {
                 if (ourAnimals[i, 0] == "ID #: ")
                     continue;
-
+                // AGE
                 bool ageMissing = ourAnimals[i, 2] == "Age: ?" || ourAnimals[i, 2] == "Age: ";
 
                 if (ageMissing)
@@ -300,7 +300,7 @@ do
 
                     do
                     {
-                        Console.WriteLine($"Enter an age for {ourAnimals[i, 0]} (whole number 0 or greater):");
+                        Console.WriteLine($"Enter an age for {ourAnimals[i, 0]}");
                         readResult = Console.ReadLine();
 
                         if (readResult != null)
@@ -319,9 +319,9 @@ do
 
                     do
                     {
-                        Console.WriteLine($"Enter a physical description for {ourAnimals[i, 0]}:");
+                        Console.WriteLine($"Enter a physical description for {ourAnimals[i, 0]} (size, color, breed, gender, weight, housebroken)");
                         readResult = Console.ReadLine();
-                        if (readResult != null && readResult.Trim() != "")
+                        if (readResult != null && readResult.Trim().Length > 0)
                         {
                             validDescription = true;
                             ourAnimals[i, 4] = "Physical description: " + readResult.Trim();
@@ -329,7 +329,7 @@ do
                     } while (validDescription == false);
                 }
             }
-            Console.WriteLine("Ages and physical descriptions are now complete.");
+            Console.WriteLine("Age and physical description fields are complete for all our friends.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
@@ -350,10 +350,10 @@ do
 
                     do
                     {
-                        Console.WriteLine($"Enter a nickname for {ourAnimals[i, 0]}:");
+                        Console.WriteLine($"Enter a nickname for {ourAnimals[i, 0]}");
                         readResult = Console.ReadLine();
 
-                        if (readResult != null && readResult.Trim() != "")
+                        if (readResult != null && readResult.Trim().Length > 0)
                         {
                             validNickname = true;
                             ourAnimals[i, 3] = "Nickname: " + readResult.Trim();
@@ -370,10 +370,10 @@ do
 
                     do
                     {
-                        Console.WriteLine($"Enter a personality description for {ourAnimals[i, 0]}:");
+                        Console.WriteLine($"Enter a personality description for {ourAnimals[i, 0]} (likes, dislikes, tricks, energy level)");
                         readResult = Console.ReadLine();
 
-                        if (readResult != null && readResult.Trim() != "")
+                        if (readResult != null && readResult.Trim().Length > 0)
                         {
                             validPersonality = true;
                             ourAnimals[i, 5] = "Personality: " + readResult.Trim();
@@ -381,7 +381,7 @@ do
                     } while (validPersonality == false);
                 }
             }
-            Console.WriteLine("Nickanames and personality descriptions are now complete.");
+            Console.WriteLine("Nickaname and personality description are complete for all our friends.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
